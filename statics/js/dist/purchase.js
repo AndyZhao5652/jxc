@@ -208,8 +208,7 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 					return ""
 				}
 				"set" === e && $("input", t).val(i)
-                        
-                        
+			}
 			function n() {
 				$("#initCombo").append($(".goodsAuto").val("").unbind("focus.once"))
 			}

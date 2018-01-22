@@ -158,7 +158,7 @@ var plug_down = "<?=base_url()?>/install_lodop32.rar";
   <div id="storageBox" class="shadow target_box dn">
   </div>
 </div>
-<script src="<?=skin_url()?>/js/dist/purchase.js?5"></script>
+<script src="<?=skin_url()?>/js/dist/purchase.js?7"></script>
 </body>
 </html>
 
