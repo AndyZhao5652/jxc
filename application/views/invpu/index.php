@@ -89,6 +89,6 @@ a.ui-btn{margin-left:10px;}
     <div id="page"></div>
   </div>
 </div>
-<script src="<?=skin_url()?>/js/dist/purchaseList.js?9"></script>
+<script src="<?=skin_url()?>/js/dist/purchaseList.js?91"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 		initDom: function(t) {
 			var e = this;
 			this.$_customer = $("#customer");
+                        this.$_sabillno = $("#sabillno");
 			this.$_date = $("#date").val(system.endDate);
 			this.$_number = $("#number");
 			this.$_classes = $("#classes");
@@ -48,7 +49,8 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 			this.$_userName = $("#userName");
 			this.customerArrears = 0;
 			this.customerCombo = Business.supplierCombo($("#customer"), {});
-                        this.$_sabillno = $("#sabillno");
+//                        this.sabillnoCombo = Business.sabillnoCombo($("#sabillno"), {});
+
 			if ("add" !== t.status || t.buId) {
 				this.$_customer.data("contactInfo", {
 					id: t.buId,
@@ -57,6 +59,17 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 				this.customerCombo.input.val(t.contactName)
 			} else;
 			hideCustomerCombo && this.customerCombo.disable();
+                        
+                        //sabillno combo
+//                        if ("add" !== t.status || t.buId) {
+//				this.$_sabillno.data("sabillno", {
+//					id: t.buId,
+//					sabillno: t.sabillno
+//				});
+//				this.sabillnoCombo.input.val(t.sabillno)
+//			} else;
+//			hideCustomerCombo && this.sabillnoCombo.disable();
+                        
 			this.$_date.datepicker({
 				onSelect: function(t) {
 					var i = t.format("yyyy-MM-dd");

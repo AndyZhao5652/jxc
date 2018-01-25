@@ -1,3 +1,5 @@
+
+// 全局命名空间
 var Public = Public || {};
 var Business = Business || {};
 Public.isIE6 = !window.XMLHttpRequest;	//ie6
@@ -852,6 +854,83 @@ Business.supplierCombo = function($_obj, opts){
 	});
 	return supplierCombo;
 };
+
+//销售单选择窗口
+Business.sabillnoCombo = function($_obj, opts){
+	if ($_obj.length == 0) { return };
+	var opts = $.extend(true, {
+		data: function(){
+			return parent.SYSTEM.supplierInfo;;
+		},
+		ajaxOptions: {
+			formatData: function(data){
+				parent.SYSTEM.supplierInfo = data.data.rows;	//更新
+				return data.data.rows;
+			}	
+		},			
+		width: 200,
+		height: 300,
+		formatText: function(row){
+			return row.number + ' ' + row.name;
+		},
+		//formatResult: 'name',
+		text: 'name',
+		value: 'id',
+		defaultSelected: 0,
+		editable: true,
+		extraListHtml: '<a href="javascript:void(0);" id="quickAddSabillno" class="quick-add-link"><i class="ui-icon-add"></i>新增销售单</a>',
+		maxListWidth: 500,
+		cache: false,
+		forceSelection: false,
+		maxFilter: 10,
+		trigger: false,	
+		callback: {
+			onChange: function(data){
+				if(data) {
+					$_obj.data('contactInfo', data);
+				} else {
+					$_obj.removeData('contactInfo');
+				}
+			}
+		}			
+	}, opts);
+	
+	var sabillnoCombo = $_obj.combo(opts).getCombo();	
+	//新增销售单
+	$('#quickAddSabillno').on('click', function(e){
+		e.preventDefault();
+		if (!Business.verifyRight('PUR_ADD')) {
+			return ;
+		};
+		$.dialog({
+			title : '新增销售单',
+			//content : 'url:/settings/vendor-manage.jsp',
+			content : 'url:' + settings_vendor_manage,
+			data: {oper: 'add', callback: function(data, oper, dialogWin){
+				//parent.getCustomer();
+				//_self.customerCombo.selectByValue(data.id, false);
+				supplierCombo.loadData(basedata_contact+'?type=2&action=list', ['id', data.id]);
+				dialogWin && dialogWin.api.close();
+			}},
+			width : 640,
+			height : 496,
+			max : false,
+			min : false,
+			cache : false,
+			lock: true
+		});
+	});
+	
+	supplierCombo.input.focus(function() {
+		var $_this = $(this);
+		setTimeout(function(){
+			$_this.select();
+		}, 15);
+	});
+	return supplierCombo;
+};
+
+
 //结算账户下拉框初始化
 Business.settlementAccountCombo = function($_obj, opts){
 	if ($_obj.length == 0) { return };
