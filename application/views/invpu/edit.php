@@ -75,8 +75,8 @@ var plug_down = "<?=base_url()?>/install_lodop32.rar";
           <i class="ui-icon-ellipsis"></i></span></dd>
         <dd class="pct30">
           <label>销售单:</label>
-          <span class="ui-combo-wrap" id="pubillno">
-          <input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
+          <span class="ui-combo-wrap" id="">
+          <input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date" id="sabillno">
           <i class="ui-icon-ellipsis"></i>
           </span></dd>
         <dd class="pct25 tc">
@@ -158,7 +158,7 @@ var plug_down = "<?=base_url()?>/install_lodop32.rar";
   <div id="storageBox" class="shadow target_box dn">
   </div>
 </div>
-<script src="<?=skin_url()?>/js/dist/purchase.js?cc28"></script>
+<script src="<?=skin_url()?>/js/dist/purchase.js?cc29"></script>
 </body>
 </html>
 

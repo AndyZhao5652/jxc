@@ -10,7 +10,7 @@
 <link href="<?=skin_url()?>/css/<?=skin()?>/ui.min.css?ver=20140815" rel="stylesheet">
 <script src="<?=skin_url()?>/js/common/libs/jquery/jquery-1.10.2.min.js"></script>
 <script src="<?=skin_url()?>/js/common/libs/json2.js"></script>
-<script src="<?=skin_url()?>/js/common/common.js?ver=20140815"></script>
+<script src="<?=skin_url()?>/js/common/common.js?ver=20140821"></script>
 <script src="<?=skin_url()?>/js/common/grid.js?ver=20140815"></script>
 <script src="<?=skin_url()?>/js/common/plugins.js?ver=20140815"></script>
 <script src="<?=skin_url()?>/js/common/plugins/jquery.dialog.js?self=true&ver=20140815"></script>
@@ -75,7 +75,7 @@ var plug_down = "<?=base_url()?>/install_lodop32.rar";
           </span></dd>
         <dd class="pct30">
           <label>销售单:</label>
-          <span class="ui-combo-wrap" id="pubillno">
+          <span class="ui-combo-wrap" id="customer">
           <input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
           <i class="ui-icon-ellipsis"></i>
           </span></dd>

@@ -1356,9 +1356,12 @@ Business.billsEvent = function(obj, type, flag){
 //				}
 				if(lable === '供应商') {
 					var content = 'url:'+settings_select_vendor+'?type=2';
-				} else {
+				} else if (lable === '客户') {
 					var content = 'url:'+settings_select_customer+'?type=1';
-				}
+				} else if (lable === '销售单') {
+					var content = 'url:'+settings_select_customer+'?type=1';
+                                }
+                                
 				_self.customerDialog = $.dialog({
 					width: 775,
 					height: 510,
@@ -1538,6 +1541,25 @@ Business.filterSupplier = function(){
 				}
 			}
 		}
+	});
+        
+        //选择销售单
+	$('#filter-customer .ui-icon-ellipsis').on('click', function(){
+		var $input = $(this).prev('input');
+		$.dialog({
+			width: 570,
+			height: 500,
+			title: '选择供应商',
+			//content: 'url:/settings/supplier-batch.jsp',
+			content: 'url:'+settings_vendor_batch,
+			lock: true,
+			ok: function(){
+				Business.setFilterData(this.content, $input);
+			},
+			cancel: function(){
+				return true;
+			}
+		});
 	});
 	
 	//客户

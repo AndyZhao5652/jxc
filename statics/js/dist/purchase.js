@@ -48,7 +48,7 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 			this.$_userName = $("#userName");
 			this.customerArrears = 0;
 			this.customerCombo = Business.supplierCombo($("#customer"), {});
-                        this.$_pubillno = $("#pubillno");
+                        this.$_sabillno = $("#sabillno");
 			if ("add" !== t.status || t.buId) {
 				this.$_customer.data("contactInfo", {
 					id: t.buId,
@@ -84,7 +84,7 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 			this.$_discount.val(t.amount);
 			this.$_payment.val(t.rpAmount);
 			this.$_arrears.val(t.arrears);
-                        this.$_pubillno.val(t.pubillno);
+                        this.$_sabillno.val(t.sabillno);
 			if (requiredMoney) {
 				$("#accountWrap").show();
 				this.accountCombo = SYSTEM.isAdmin !== !1 || SYSTEM.rights.SettAcct_QUERY ? Business.accountCombo($("#account"), {
@@ -144,7 +144,7 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 			this.btn_reaudit = o;
 			if (t.id > 0) {
 				this.$_number.text(t.billNo);
-                                this.$_pubillno.val(t.pubillno);
+                                this.$_sabillno.val(t.sabillno);
 				this.$_date.val(t.date);
 				this.$_totalArrears.val(t.totalArrears);
 				this.$_accountInfo.data("accountInfo", t.accounts);
@@ -694,7 +694,7 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 				i.$_arrears.val(t.arrears);
 				i.$_totalArrears.val(t.totalArrears);
 				i.$_userName.html(t.userName);
-                                i.$_pubillno.t.pubillno
+                                i.$_sabillno.t.sabillno
 			}
 			$("#grid").clearGridData();
 			var i = this;
@@ -1150,9 +1150,9 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 				});
 				return !1
 			}
-                        var i = e.$_pubillno.find("input");
+                        var i = e.$_sabillno.find("input");
 			if ("" === i.val()) {
-				e.$_pubillno.removeData("pubillno");
+				e.$_sabillno.removeData("sabillno");
 				parent.Public.tips({
 					type: 2,
 					content: "请选择销售单！"
@@ -1189,7 +1189,7 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 					rpAmount: $.trim(t.$_payment.val()),
 					arrears: $.trim(t.$_arrears.val()),
 					totalArrears: "",
-                                        pubillno: e.$_pubillno.find("input").val()
+                                        sabillno: $.trim(t.$_sabillno.val())
 				};
 				if (taxRequiredCheck) {
 					n.totalTax = $("#grid").jqGrid("footerData", "get").tax.replace(/,/g, "");
@@ -1287,7 +1287,7 @@ if (urlParam.id) {
 					rpAmount: "0.00",
 					arrears: "0.00",
 					accId: 0,
-                                        pubillno: 0
+                                        sabillno: 0
 				};
 				THISPAGE.init(originalData)
 			}
@@ -1341,7 +1341,7 @@ if (urlParam.id) {
 		rpAmount: "0.00",
 		arrears: "0.00",
 		accId: 0,
-                pubillno: 0
+                sabillno: 0
 	};
 	THISPAGE.init(originalData)
 }

@@ -38,7 +38,7 @@ class Invpu extends CI_Controller {
 			 $info['totalarrears'] = (float)$data['totalArrears'];
 			 $info['uid']         = $this->uid;
 			 $info['username']    = $this->name;
-                         $info['pubillno']    = $data['pubillno'];
+                         $info['sabillno']    = $data['sabillno'];
 			 $this->db->trans_begin();
 			 $invpuid = $this->mysql_model->db_inst(INVPU,$info);
 			 $v = array();
@@ -108,7 +108,7 @@ class Invpu extends CI_Controller {
 			 $info['totalarrears'] = (float)$data['totalArrears'];
 			 $info['uid']         = $this->uid;
 			 $info['username']    = $this->name;
-                         $info['pubillno']    = $data['pubillno'];
+                         $info['sabillno']    = $data['sabillno'];
 			 $v = array();
 			 $this->db->trans_begin();
 			 $this->mysql_model->db_count(INVPU,'(id<>'.$id.') and (billno="'.$info['billno'].'")')>0 && die('{"status":-1,"msg":"购货单已存在"}');
@@ -183,7 +183,7 @@ class Invpu extends CI_Controller {
 			$info['data']['status']             = 'edit';
 			$info['data']['description']        = $data['description']; 
 			$info['data']['totalDiscount']      = (float)$data['totalarrears'];
-                        $info['data']['pubillno']      = $data['pubillno'];
+                        $info['data']['sabillno']      = $data['sabillno'];
 			$list = $this->data_model->invpu_info(' and (a.invpuid='.$id.')','order by id desc');  
 			foreach ($list as $arr=>$row) {
 				$v[$arr]['invSpec']           = $row['spec'];
@@ -256,7 +256,7 @@ class Invpu extends CI_Controller {
 			$v[$arr]['totalAmount']  = (float)abs($row['totalamount']);
 			$v[$arr]['userName']     = $row['username'];
 			$v[$arr]['transTypeName']= $row['type']==1 ? '购货' : '退货';
-                        $v[$arr]['pubillno']     = $row['pubillno'];
+                        $v[$arr]['sabillno']     = $row['sabillno'];
 		}
 		$data['data']['rows']      = is_array($v) ? $v : '';
 		die(json_encode($data));

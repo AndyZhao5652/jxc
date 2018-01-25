@@ -116,8 +116,8 @@ var queryConditions = {
 					width: 200,
 					classes: "ui-ellipsis"
                                 }, {
-					name: "pubillno",
-					index: "pubillno",
+					name: "sabillno",
+					index: "sabillno",
 					width: 100,
 					classes: "ui-ellipsis"
 				}, {
