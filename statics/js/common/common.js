@@ -1463,6 +1463,51 @@ Business.billsEvent = function(obj, type, flag){
 				$(this).data('hasInstance', true);
 			};
 		});
+                
+                //销售单选择窗口
+                $('#sabillno').on('click', '.ui-icon-ellipsis', function(e){			
+			if($(this).data('hasInstance')) {
+				_self.sabillnoDialog.show().zindex();
+			} else {
+				var lable = $('#sabillno').prev().text().slice(0, -1);
+				var title = '选择' + lable;
+				//if(lable === '供应商') {
+//					var content = 'url:/settings/select-customer.jsp?type=10';
+//				} else {
+//					var content = 'url:/settings/select-customer.jsp';
+//				}
+//				if(lable === '供应商') {
+//					var content = 'url:'+settings_select_vendor+'?type=2';
+//				} else if (lable === '客户') {
+//					var content = 'url:'+settings_select_customer+'?type=1';
+//				} else if (lable === '销售单') {
+//					var content = 'url:'+settings_select_customer+'?type=1';
+//                                }
+                                
+                                var content = 'url:'+settings_select_vendor+'?type=2';
+                                
+				_self.sabillnoDialog = $.dialog({
+					width: 775,
+					height: 510,
+					title: title,
+					content: content,
+					data: {
+						
+					},
+					lock: true,
+					ok: function(){
+						this.content.callback();
+						this.hide();
+				        return false;
+					},
+					cancel: function(){
+						this.hide();
+				        return false;
+					}
+				});
+				$(this).data('hasInstance', true);
+			};
+		});
 		
 		//批量添加
 		$('.grid-wrap').on('click', '.ui-icon-ellipsis', function(e){

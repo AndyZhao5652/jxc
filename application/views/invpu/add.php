@@ -2,6 +2,11 @@
 <!doctype html>
 <html>
 <head>
+
+<?php
+include dirname(dirname(__FILE__))."\common\head.html";
+?>
+<!--
 <meta charset="utf-8">
 <meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
@@ -10,7 +15,7 @@
 <link href="<?=skin_url()?>/css/<?=skin()?>/ui.min.css?ver=20140815" rel="stylesheet">
 <script src="<?=skin_url()?>/js/common/libs/jquery/jquery-1.10.2.min.js"></script>
 <script src="<?=skin_url()?>/js/common/libs/json2.js"></script>
-<script src="<?=skin_url()?>/js/common/common.js?ver=20140821"></script>
+<script src="<?=skin_url()?>/js/common/common.js?ver=20140815"></script>
 <script src="<?=skin_url()?>/js/common/grid.js?ver=20140815"></script>
 <script src="<?=skin_url()?>/js/common/plugins.js?ver=20140815"></script>
 <script src="<?=skin_url()?>/js/common/plugins/jquery.dialog.js?self=true&ver=20140815"></script>
@@ -53,12 +58,13 @@ var api_invpu_print = "<?=site_url('api/invpu_print')?>";
 var plug_down = "<?=base_url()?>/install_lodop32.rar";
 </script>
 <script language="javascript" src="<?=skin_url()?>/js/common/plugins/print/LodopFuncs.js?2"></script>
-<link href="<?=skin_url()?>/css/<?=skin()?>/bills.css" rel="stylesheet" type="text/css">
-<style>
+<link href="<?=skin_url()?>/css/<?=skin()?>/bills.css" rel="stylesheet" type="text/css">-->
+<!--<style>
 #bottomField{line-height:30px;}
 #bottomField label{width: 75px;display: inline-block;}
 .con-footer{padding:10px 0 0 0;}
-</style>
+</style>-->
+
 </head>
 
 <body>
@@ -75,9 +81,9 @@ var plug_down = "<?=base_url()?>/install_lodop32.rar";
           </span></dd>
         <dd class="pct30">
           <label>销售单:</label>
-          <span class="ui-combo-wrap" id="customer">
+          <span class="ui-combo-wrap" id="sabillno">
           <input type="text" name="" class="input-txt" autocomplete="off" value="" data-ref="date">
-          <i class="ui-icon-ellipsis"></i>
+          <!--<i class="ui-icon-ellipsis"></i>-->
           </span></dd>
         <dd class="pct25 tc">
           <label>单据日期:</label>

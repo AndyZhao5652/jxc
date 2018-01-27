@@ -2,45 +2,11 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<title>在线进销存</title>
-<link href="<?=skin_url()?>/css/common.css?ver=20140815" rel="stylesheet" type="text/css">
-<link href="<?=skin_url()?>/css/<?=skin()?>/ui.min.css?ver=20140815" rel="stylesheet">
-<script src="<?=skin_url()?>/js/common/libs/jquery/jquery-1.10.2.min.js"></script>
-<script src="<?=skin_url()?>/js/common/libs/json2.js"></script>
-<script src="<?=skin_url()?>/js/common/common.js?ver=20140815"></script>
-<script src="<?=skin_url()?>/js/common/grid.js?ver=20140815"></script>
-<script src="<?=skin_url()?>/js/common/plugins.js?ver=20140815"></script>
-<script src="<?=skin_url()?>/js/common/plugins/jquery.dialog.js?self=true&ver=20140815"></script>
-<script type="text/javascript">
-try{
-	document.domain = '<?=base_url()?>';
-}catch(e){
-	//console.log(e);
-}
-</script>
+    
+<?php
+include dirname(__FILE__)."\common\head.html";;
+?>
 
-<script type="text/javascript">
-var WDURL = "";
-var SCHEME= "<?=skin()?>";
-var icon_url = "<?=skin_url()?>/css/base/dialog/icons/";                      //图片路径
-var settings_customer_manage = "<?=site_url('settings/customer_manage')?>";   //新增修改客户 
-var settings_vendor_manage = "<?=site_url('settings/vendor_manage')?>";       //新增供应商
-var settings_vendor_batch = "<?=site_url('settings/vendor_batch')?>";         //批量选择供应商 
-var basedata_settlement = "<?=site_url('basedata/settlement')?>";             //结算方式列表
-var settings_settlement_manage = "<?=site_url('settings/settlement_manage')?>";       //新增修改结算方式
-var basedata_category = "<?=site_url('basedata/category')?>";                     //分类列表
-var basedata_category_type= "<?=site_url('basedata/category_type')?>";            //分类分类
-var settings_goods_manage = "<?=site_url('settings/goods_manage')?>";       //新增修改商品
-var settings_goods_batch  = "<?=site_url('settings/goods_batch')?>";        //批量选择商品
-var basedata_goods = "<?=site_url('basedata/goods')?>";                     //商品
-var basedata_unit  = "<?=site_url('basedata/unit')?>";                      //单位
-var settings_unit_manage = "<?=site_url('settings/unit_manage')?>";       //单位增修改 
-var basedata_contact  = "<?=site_url('basedata/contact')?>";              //客户、供应商列表
-var settings_inventory =  "<?=site_url('settings/inventory')?>";          //单库存查询
-</script>
 <link href="<?=skin_url()?>/css/<?=skin()?>/index.css?ver=1" rel="stylesheet" type="text/css" id="indexFile">
 <script src="<?=skin_url()?>/js/dist/template.js"></script>
 

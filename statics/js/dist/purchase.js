@@ -707,7 +707,12 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 				i.$_arrears.val(t.arrears);
 				i.$_totalArrears.val(t.totalArrears);
 				i.$_userName.html(t.userName);
-                                i.$_sabillno.t.sabillno
+//                                i.$_sabillno.t.sabillno
+                                i.$_sabillno.data("sabillno", {
+					id: t.buId,
+					name: t.sabillno
+				});
+//				i.sabillnoCombo.input.val(t.sabillno);
 			}
 			$("#grid").clearGridData();
 			var i = this;

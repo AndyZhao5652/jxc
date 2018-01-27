@@ -1,0 +1,199 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>在线进销存</title>
+<link href="<?=skin_url()?>/css/common.css?ver=20140815" rel="stylesheet" type="text/css">
+<link href="<?=skin_url()?>/css/<?=skin()?>/ui.min.css?ver=20140815" rel="stylesheet">
+<script src="<?=skin_url()?>/js/common/libs/jquery/jquery-1.10.2.min.js"></script>
+<script src="<?=skin_url()?>/js/common/libs/json2.js"></script>
+<script src="<?=skin_url()?>/js/common/common.js?ver=20140822"></script>
+<script src="<?=skin_url()?>/js/common/grid.js?ver=20140815"></script>
+<script src="<?=skin_url()?>/js/common/plugins.js?ver=20140815"></script>
+<script src="<?=skin_url()?>/js/common/plugins/jquery.dialog.js?self=true&ver=20140815"></script>
+<script type="text/javascript">
+try{
+	document.domain = '<?=base_url()?>';
+}catch(e){
+	//console.log(e);
+}
+</script>
+
+<script type="text/javascript">
+var WDURL = "";
+var SCHEME= "<?=skin()?>";
+var icon_url = "<?=skin_url()?>/css/base/dialog/icons/";
+
+var settings_customer_manage = "<?=site_url('settings/customer_manage')?>";   
+var settings_vendor_manage = "<?=site_url('settings/vendor_manage')?>";
+var settings_trans_manage = "<?=site_url('settings/trans_manage')?>";  
+var settings_vendor_batch = "<?=site_url('settings/vendor_batch')?>";         
+var settings_customer_batch = "<?=site_url('settings/customer_batch')?>";   
+var settings_settlement_manage = "<?=site_url('settings/settlement_manage')?>";       
+var settings_goods_manage = "<?=site_url('settings/goods_manage')?>";     
+var settings_goods_batch  = "<?=site_url('settings/goods_batch')?>";       
+var settings_unit_manage = "<?=site_url('settings/unit_manage')?>";    
+var settings_inventory =  "<?=site_url('settings/inventory')?>";          
+var settings_skins =  "<?=site_url('settings/skins')?>"; 
+var settings_select_vendor =  "<?=site_url('settings/select_vendor')?>";
+var settings_customer_cate_manage = "<?=site_url('settings/customer_cate_manage')?>";
+var settings_select_customer =  "<?=site_url('settings/select_customer')?>";
+var settings_select_sabillno =  "<?=site_url('settings/select_sabillno')?>";
+
+var basedata_settlement = "<?=site_url('basedata/settlement')?>";
+var basedata_category = "<?=site_url('basedata/category')?>";
+var basedata_category_type= "<?=site_url('basedata/category_type')?>";
+var basedata_goods = "<?=site_url('basedata/goods')?>";                     
+var basedata_unit  = "<?=site_url('basedata/unit')?>";
+var basedata_contact  = "<?=site_url('basedata/contact')?>";
+var basedata_contact_query = "<?=site_url('basedata/contact_query')?>";
+var basedata_contact_getnextno = "<?=site_url('basedata/contact_getnextno')?>";
+var basedata_contact_checkname = "<?=site_url('basedata/contact_checkname')?>";
+var basedata_trans_checkno = "<?=site_url('basedata/trans_checkno')?>";
+var basedata_trans = "<?=site_url('basedata/trans')?>";
+var basedata_trans_query = "<?=site_url('basedata/trans_query')?>";
+var basedata_logs = "<?=site_url('basedata/logs')?>";   
+var basedata_admin = "<?=site_url('basedata/admin')?>";
+var basedata_goods_query = "<?=site_url('basedata/goods_query')?>";
+
+var invpu_lists = "<?=site_url('invpu/lists')?>";
+var invpu_add   = "<?=site_url('invpu/add')?>";
+var invpu_edit   = "<?=site_url('invpu/edit')?>";
+var invpu_info   = "<?=site_url('invpu/info')?>";
+var invpu_del   = "<?=site_url('invpu/del')?>";
+var api_invpu_print = "<?=site_url('api/invpu_print')?>";
+var plug_down = "<?=base_url()?>/install_lodop32.rar";
+
+var invsa_lists = "<?=site_url('invsa/lists')?>";
+var invsa_add   = "<?=site_url('invsa/add')?>";
+var invsa_edit   = "<?=site_url('invsa/edit')?>";
+var invsa_info   = "<?=site_url('invsa/info')?>";
+var invsa_del   = "<?=site_url('invsa/del')?>";
+var invsa_export   = "<?=site_url('invsa/export')?>";
+var api_invsa_print   = "<?=site_url('api/invsa_print')?>";
+
+var trans_save = "<?=site_url('trans/save')?>";
+var trans_export  = "<?=site_url('trans/export')?>";
+var trans_del    = "<?=site_url('trans/del')?>";
+
+var unit_del = "<?=site_url('unit/del')?>";
+var unit_save = "<?=site_url('unit/save')?>";
+
+var admin_edit = "<?=site_url('home/editpwd')?>";
+var admin_authority = "<?=site_url('admin/authority')?>";
+var basedata_admin_checkname = "<?=site_url('basedata/admin_checkname')?>";
+
+var backup_lists = "<?=site_url('backup/lists')?>";
+var backup_add = "<?=site_url('backup/add')?>";
+var backup_del = "<?=site_url('backup/del')?>";
+var backup_down = "<?=site_url('backup/down')?>";
+var backup_recovery = "<?=site_url('backup/recovery')?>";
+
+var category_del = "<?=site_url('category/del')?>";
+var category_save= "<?=site_url('category/save')?>";
+
+var customer_export  = "<?=site_url('customer/export')?>";
+var customer_del    = "<?=site_url('customer/del')?>";
+var customer_save = "<?=site_url('customer/save')?>";
+
+var vendor_del    = "<?=site_url('vendor/del')?>";
+var vendor_export = "<?=site_url('vendor/export')?>";
+var vendor_save   = "<?=site_url('vendor/save')?>";
+
+var goods_del = "<?=site_url('goods/del')?>";
+var goods_save= "<?=site_url('goods/save')?>";
+var goods_export= "<?=site_url('goods/export')?>";
+
+var inventory_lists= "<?=site_url('inventory/lists')?>";
+var inventory_query= "<?=site_url('inventory/query')?>";
+var inventory_export= "<?=site_url('inventory/export')?>";
+var inventory_generator = "<?=site_url('inventory/generator')?>";
+
+var invoi_inlist = "<?=site_url('invoi/inlist')?>";
+var invoi_outlist = "<?=site_url('invoi/outlist')?>";
+var invoi_in    = "<?=site_url('invoi/in')?>";
+var invoi_inedit    = "<?=site_url('invoi/inedit')?>";
+var invoi_out   = "<?=site_url('invoi/out')?>";
+var invoi_outedit  = "<?=site_url('invoi/outedit')?>";
+var invoi_info  = "<?=site_url('invoi/info')?>";
+var invoi_del   = "<?=site_url('invoi/del')?>";
+var invoi_type  = "<?=site_url('invoi/type')?>";
+var api_invoi_print = "<?=site_url('api/invoi_print')?>";
+
+
+
+var report_invpu_detail = "<?=site_url('report/invpu_detail')?>";
+var report_invpu_detail_xls = "<?=site_url('report/invpu_detail_xls')?>";
+var report_invpu_contract = "<?=site_url('report/cus_contract')?>";
+var report_invpu_summary = "<?=site_url('report/invpu_summary')?>";
+var report_invpu_summary_xls = "<?=site_url('report/invpu_summary_xls')?>";
+var report_invpu_supply = "<?=site_url('report/invpu_supply')?>";
+var report_invpu_supply_xls = "<?=site_url('report/invpu_supply_xls')?>";
+
+var report_sales_detail = "<?=site_url('report/sales_detail')?>";
+var report_sales_detail_xls  = "<?=site_url('report/sales_detail_xls')?>";
+var report_sales_customer = "<?=site_url('report/sales_customer')?>";
+var report_sales_customer_xls = "<?=site_url('report/sales_customer_xls')?>";
+var report_sales_summary = "<?=site_url('report/sales_summary')?>";
+var report_sales_summary_xls= "<?=site_url('report/sales_summary_xls')?>";
+
+var report_arrears  = "<?=site_url('report/arrears')?>";
+var report_arrears_xls  = "<?=site_url('report/arrears_xls')?>";
+var report_balance_detail = "<?=site_url('report/balance_detail')?>";
+var report_balance_detail_xls = "<?=site_url('report/balance_detail_xls')?>";
+var report_balance_supply = "<?=site_url('report/balance_supply')?>";
+var report_balance_supply_xls = "<?=site_url('report/balance_supply_xls')?>";
+var report_goods_balance = "<?=site_url('report/goods_balance')?>";
+var report_goods_balance_xls = "<?=site_url('report/goods_balance_xls')?>";
+var report_goods_summary = "<?=site_url('report/goods_summary')?>";
+var report_goods_summary_xls = "<?=site_url('report/goods_summary_xls')?>";
+
+
+
+</script>
+
+<script language="javascript" src="<?=skin_url()?>/js/common/plugins/print/LodopFuncs.js?2"></script>
+<link href="<?=skin_url()?>/css/<?=skin()?>/bills.css" rel="stylesheet" type="text/css">
+<link href="<?=skin_url()?>/css/authority.css" rel="stylesheet" type="text/css">
+<!--<link rel="stylesheet" href="<?=skin_url()?>/css/report.css" />-->
+<link rel="stylesheet" href="<?=skin_url()?>/js/common/plugins/validator/jquery.validator.css">
+<script type="text/javascript" src="<?=skin_url()?>/js/common/plugins/validator/jquery.validator.js"></script>
+<script type="text/javascript" src="<?=skin_url()?>/js/common/plugins/validator/local/zh_CN.js"></script>
+<style>
+#bottomField{line-height:30px;}
+#bottomField label{width: 75px;display: inline-block;}
+.con-footer{padding:10px 0 0 0;}
+/*.backup-status{margin: 10px 0 20px;}
+
+.manage-wrap{margin: 0 auto;width: 300px;}
+.manage-wrap .ui-input{width: 200px;font-size:14px;}
+.manage-wrap .hideFeild{position: absolute;top: 30px;left:80px;width:210px;border:solid 1px #ccc;background-color:#fff;}
+.ztreeDefault{overflow-y:auto;max-height:240px;}
+.searchbox{float: left;font-size: 14px;}
+.searchbox li{float: left;margin-right: 10px;}
+#matchCon{width:140px;}
+.ui-input-ph {color: #aaa;}
+.cur #custom-assisting .ui-combo-wrap {background: #eaeaea;border-color: #c1c1c1;}
+.cur #custom-assisting input {background: #eaeaea;font-weight: bold;}
+.ui-droplist-wrap .selected {background-color: #d2d2d2;}
+.input-txt{font-size:14px;}
+.ui-droplist-wrap .list-item {font-size:14px;}
+
+body{overflow-y:hidden;}
+.matchCon{width:280px;}
+#tree{background-color: #fff;width: 225px;border: solid #ddd 1px;margin-left: 5px;height:100%;}
+h3{background: #EEEEEE;border: 1px solid #ddd;padding: 5px 10px;}
+.grid-wrap{position:relative;}
+.grid-wrap h3{border-bottom: none;}
+#tree h3{border-style:none;border-bottom:solid 1px #D8D8D8;}
+.quickSearchField{padding :10px; background-color: #f5f5f5;border-bottom:solid 1px #D8D8D8;}
+#searchCategory input{width:165px;}
+.innerTree{overflow-y:auto;}
+#hideTree{cursor: pointer;color:#fff;padding: 0 4px;background-color: #B9B9B9;border-radius: 3px;position: absolute;top: 5px;right: 5px;}
+#hideTree:hover{background-color: #AAAAAA;}
+#clear{display:none;}
+
+.mod-search{ position:relative; }
+#custom{ position:absolute; top:0; right:0; }
+.ui-jqgrid-bdiv .ui-state-highlight { background: none; }*/
+
+</style>
