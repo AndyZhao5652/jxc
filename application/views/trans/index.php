@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    
+
 <?php
 include dirname(dirname(__FILE__))."\common\head.html";;
 ?>
@@ -19,13 +19,13 @@ include dirname(dirname(__FILE__))."\common\head.html";;
 	        <li>
 	          <input type="text" id="matchCon" class="ui-input ui-input-ph matchCon" value="输入运输单编号/ 名称/ 联系人/ 电话查询">
 	        </li>
-	        <li><a class="ui-btn mrb" id="search">查询</a></li>
+	        <li><a class="ui-btn mrb" id="search"><?php echo showlang('common', 'common_query');?></a></li>
 	      </ul>
 	    </div>
-	    <div class="fr"><a href="#" class="ui-btn ui-btn-sp mrb" id="btn-add">新增</a><!--<a href="#" class="ui-btn mrb" id="btn-print">打印</a>-->
+	    <div class="fr"><a href="#" class="ui-btn ui-btn-sp mrb" id="btn-add"><?php echo showlang('common', 'common_add');?></a><!--<a href="#" class="ui-btn mrb" id="btn-print">打印</a>-->
 		<!--<a href="#" class="ui-btn mrb" id="btn-import">导入</a>-->
-		<a href="#" class="ui-btn mrb" id="btn-export">导出</a>
-		<a href="#" class="ui-btn" id="btn-batchDel">删除</a></div>
+		<a href="#" class="ui-btn mrb" id="btn-export"><?php echo showlang('common', 'common_export');?></a>
+		<a href="#" class="ui-btn" id="btn-batchDel"><?php echo showlang('common', 'common_delete');?></a></div>
 	  </div>
     <div class="grid-wrap">
 	    <table id="grid">

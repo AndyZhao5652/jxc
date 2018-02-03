@@ -288,3 +288,8 @@ function showpage($url,$page,$pages,$total,$t0=''){
     return $str;
 }
 
+function showlang($langfile,$langkey){
+    $ci =& get_instance();
+    $ci->lang->load($langfile);
+    return $ci->lang->line($langkey);
+}

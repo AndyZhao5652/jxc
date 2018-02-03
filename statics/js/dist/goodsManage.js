@@ -324,7 +324,8 @@ function initEvent() {
 				return []
 			}
 		},
-		extraListHtml: '<a href="#" class="quick-add-link" onclick="addUnit();return false;"><i class="ui-icon-add"></i>新增</a>'
+                common_add = "<?php echo showlang('common', 'common_add');?>",
+		extraListHtml: '<a href="#" class="quick-add-link" onclick="addUnit();return false;"><i class="ui-icon-add"></i>' + common_add + '</a>'
 	}).getCombo();
 	$("#purchasePrice, #salePrice").keypress(Public.numerical).focus(function() {
 		this.value = Public.currencyToNum(this.value);

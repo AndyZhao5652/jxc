@@ -12,7 +12,7 @@ include dirname(dirname(__FILE__))."\common\head.html";;
 <div class="wrapper">
 	<div class="mod-toolbar-top cf">
 	    <div class="fl"><strong class="tit">计量单位</strong></div>
-	    <div class="fr"><a href="#" class="ui-btn ui-btn-sp mrb" id="btn-add">新增</a><a class="ui-btn" id="btn-refresh">刷新</a></div>
+	    <div class="fr"><a href="#" class="ui-btn ui-btn-sp mrb" id="btn-add"><?php echo showlang('common', 'common_add');?></a><a class="ui-btn" id="btn-refresh">刷新</a></div>
 	  </div>
     <div class="grid-wrap">
 	    <table id="grid">

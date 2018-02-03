@@ -22,8 +22,8 @@ include dirname(dirname(__FILE__))."\common\head.html";;
 	        <li>
 	          <input type="text" id="matchCon" class="ui-input ui-input-ph" value="请输入商品编号或名称或型号">
 	        </li>
-	        <li><a class="ui-btn mrb" id="search">查询</a><!-- <a class="ui-btn" id="refresh">刷新</a> --></li>
-	      </ul>
+	        <li><a class="ui-btn mrb" id="search"><?php echo showlang('common', 'common_query');?></a><!-- <a class="ui-btn" id="refresh">刷新</a> --></li>
+	      </ul>5
 	    </div>
 	  </div>
 	  <div class="grid-wrap">
@@ -32,6 +32,6 @@ include dirname(dirname(__FILE__))."\common\head.html";;
 	    <div id="page"></div>
 	  </div>
 </div>
-<script src="<?=skin_url()?>/js/dist/goodsBatch.js?2"></script>
+<script src="<?=skin_url()?>/js/dist/goodsBatch.js?3"></script>
 </body>
 </html>

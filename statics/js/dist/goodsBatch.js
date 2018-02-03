@@ -227,7 +227,7 @@ var THISPAGE = {
 	loadGrid: function() {
 		function e(e, t, i) {
 			//var a = '<div class="operating" data-id="' + i.id + '"><a class="ui-icon ui-icon-search" title="查询"></a><span class="ui-icon ui-icon-copy" title="商品图片"></span></div>';
-			var a = '<div class="operating" data-id="' + i.id + '"><a class="ui-icon ui-icon-search" title="查询"></a></div>';
+                    var a = '<div class="operating" data-id="' + i.id + '"><a class="ui-icon ui-icon-search" title="新增"></a></div>';
 			return a
 		}
 		$(window).height() - $(".grid-wrap").offset().top - 84;

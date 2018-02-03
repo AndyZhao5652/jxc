@@ -29,16 +29,16 @@ a.ui-btn{margin-left:10px;}
           <i>-</i>
           <input type="text" id="endDate" value="" class="ui-input ui-datepicker-input">
         </li>
-        <li><a class="ui-btn" id="search">查询</a><!--<a class="ui-btn ui-btn-refresh" id="refresh" title="刷新"><b></b></a>--></li>
+        <li><a class="ui-btn" id="search"><?php echo showlang('common', 'common_query');?></a><!--<a class="ui-btn ui-btn-refresh" id="refresh" title="刷新"><b></b></a>--></li>
       </ul>
     </div>
-    <div class="fr"><a class="ui-btn ui-btn-sp" id="add">新增</a>
+    <div class="fr"><a class="ui-btn ui-btn-sp" id="add"><?php echo showlang('common', 'common_add');?></a>
 	<!--<a class="ui-btn" id="print" target="_blank" href="javascript:void(0);">打印</a>-->
-	<a class="ui-btn" id="export" target="_blank" href="javascript:void(0);">导出</a><a class="ui-btn dn" id="audit">审核</a><a class="ui-btn" id="reAudit">反审核</a></div>
+	<a class="ui-btn" id="export" target="_blank" href="javascript:void(0);"><?php echo showlang('common', 'common_export');?></a><a class="ui-btn dn" id="audit">审核</a><a class="ui-btn" id="reAudit">反审核</a></div>
   </div>
 <!--  <div class="mod-toolbar-top cf">
     <div class="fl"><strong class="tit">仓库</strong></div>
-    <div class="fr"><a class="ui-btn ui-btn-sp mrb" id="search">新增</a><a class="ui-btn" id="export">导出</a></div>
+    <div class="fr"><a class="ui-btn ui-btn-sp mrb" id="search"><?php echo showlang('common', 'common_add');?></a><a class="ui-btn" id="export"><?php echo showlang('common', 'common_export');?></a></div>
   </div>-->
   <div class="grid-wrap">
     <table id="grid">

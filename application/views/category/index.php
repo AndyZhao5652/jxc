@@ -24,11 +24,11 @@ include dirname(dirname(__FILE__))."\common\head.html";;
 		        <li>
 		          <input type="text" id="matchCon" class="ui-input ui-input-ph matchCon" value="输入类别名称查询">
 		        </li>
-		        <li><a class="ui-btn mrb" id="search">查询</a></li>
+		        <li><a class="ui-btn mrb" id="search"><?php echo showlang('common', 'common_query');?></a></li>
 		    </ul>
           </div>
         </div>
-	    <div class="fr"><a href="#" class="ui-btn ui-btn-sp mrb" id="btn-add">新增</a><a class="ui-btn" id="btn-refresh">刷新</a></div>
+	    <div class="fr"><a href="#" class="ui-btn ui-btn-sp mrb" id="btn-add"><?php echo showlang('common', 'common_add');?></a><a class="ui-btn" id="btn-refresh">刷新</a></div>
 	  </div>
     <div class="grid-wrap">
 	    <table id="grid">

@@ -312,7 +312,9 @@ function initEvent() {
 			}
 		}
 	}, e);
-	var t = $("#date");
+        
+        //预计抵达日期选择
+	var t = $("#esarrdate");
 	t.blur(function() {
 		"" == t.val() && t.val(parent.parent.SYSTEM.startDate)
 	});
@@ -322,6 +324,31 @@ function initEvent() {
 			e.test(t.val()) || t.val("")
 		}
 	});
+        
+        //实际抵达日期选择
+	var rearrdate = $("#rearrdate");
+	rearrdate.blur(function() {
+		"" == rearrdate.val() && rearrdate.val(parent.parent.SYSTEM.startDate)
+	});
+	rearrdate.datepicker({
+		onClose: function() {
+			var e = /^\d{4}-((0?[1-9])|(1[0-2]))-\d{1,2}/;
+			e.test(rearrdate.val()) || rearrdate.val("")
+		}
+	});
+        
+        //发货日期选择
+	var shipdate = $("#shipdate");
+	shipdate.blur(function() {
+		"" == shipdate.val() && shipdate.val(parent.parent.SYSTEM.startDate)
+	});
+	shipdate.datepicker({
+		onClose: function() {
+			var e = /^\d{4}-((0?[1-9])|(1[0-2]))-\d{1,2}/;
+			e.test(shipdate.val()) || shipdate.val("")
+		}
+	});
+        
 	$("#receiveFunds").keypress(Public.numerical).focus(function() {
 		this.value = Public.currencyToNum(this.value);
 		$(this).select()

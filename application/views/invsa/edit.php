@@ -35,6 +35,16 @@ include dirname(dirname(__FILE__))."\common\head.html";;
             <input type="radio" name="classes" value="2">
             退货</label>
         </dd>
+        
+        <dd class="pct30">
+            <div class="label-wrap">
+        	<label>币种:</label>
+        </div>
+        <div class="ctn-wrap">
+        	<input type="text" id="currency" class="ui-input" data-ref="discount" style="width:20%; margin:0 -6px; ">
+        </div>
+        </dd>
+        
       </dl>
     </div>
     <div class="grid-wrap">

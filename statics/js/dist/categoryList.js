@@ -406,9 +406,11 @@ var conditions = {
 					id: e,
 					typeNumber: conditions.typeNumber
 				}, function(t) {
+                                        common_delete = "<?php echo showlang('common', 'common_delete');?>";
 					if (t && 200 == t.status) {
 						parent.Public.tips({
-							content: "删除" + conditions.name + "类别成功！"
+                                                    
+							content: common_delete + conditions.name + "类别成功！"
 						});
 						$("#grid").jqGrid("delRowData", e);
 						for (var i = parent.SYSTEM.categoryInfo[conditions.typeNumber].length, r = 0; i > r; r++) if (parent.SYSTEM.categoryInfo[conditions.typeNumber][r].id === e) {
@@ -418,7 +420,7 @@ var conditions = {
 						}
 					} else parent.Public.tips({
 						type: 1,
-						content: "删除" + conditions.name + "类别失败！" + t.msg
+						content: common_delete + conditions.name + "类别失败！" + t.msg
 					})
 				})
 			})

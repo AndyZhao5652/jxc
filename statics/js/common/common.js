@@ -98,8 +98,9 @@ obj.height(h);
 }
 //操作项格式化，适用于有“修改、删除”操作的表格
 Public.operFmatter = function (val, opt, row) {
-	var html_con = '<div class="operating" data-id="' + row.id + '"><span class="ui-icon ui-icon-pencil" title="修改"></span><span class="ui-icon ui-icon-trash" title="删除"></span></div>';
-	return html_con;
+    common_delete = "<?php echo showlang('common', 'common_delete');?>";
+    var html_con = '<div class="operating" data-id="' + row.id + '"><span class="ui-icon ui-icon-pencil" title="修改"></span><span class="ui-icon ui-icon-trash" title="' + common_delete + '"></span></div>';
+    return html_con;
 };
 
 Public.billsOper = function (val, opt, row) {

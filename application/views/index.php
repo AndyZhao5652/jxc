@@ -644,18 +644,18 @@ var list = {
 		dataRight: "PUREOORTDETAIL_QUERY",
 		target: "report-purchase"
 	},
-	puSummary: {
-		name: "采购汇总表（按商品）",
-		href: "<?=site_url('report/invpu_summary')?>",
-		dataRight: "PUREPORTINV_QUERY",
-		target: "report-purchase"
-	},
-	puSummarySupply: {
-		name: "采购汇总表（按供应商）",
-		href: "<?=site_url('report/invpu_supply')?>",
-		dataRight: "PUREPORTPUR_QUERY",
-		target: "report-purchase"
-	},
+//	puSummary: {
+//		name: "采购汇总表（按商品）",
+//		href: "<?=site_url('report/invpu_summary')?>",
+//		dataRight: "PUREPORTINV_QUERY",
+//		target: "report-purchase"
+//	},
+//	puSummarySupply: {
+//		name: "采购汇总表（按供应商）",
+//		href: "<?=site_url('report/invpu_supply')?>",
+//		dataRight: "PUREPORTPUR_QUERY",
+//		target: "report-purchase"
+//	},
 	salesOrderTracking: {
 		name: "销售订单跟踪表",
 		href: "/report/sales-order-tracking.jsp",
@@ -668,18 +668,18 @@ var list = {
 		dataRight: "SAREPORTDETAIL_QUERY",
 		target: "report-sales"
 	},
-	salesSummary: {
-		name: "销售汇总表（按商品）",
-		href: "<?=site_url('report/sales_summary')?>",
-		dataRight: "SAREPORTINV_QUERY",
-		target: "report-sales"
-	},
-	salesSummaryCustomer: {
-		name: "销售汇总表（按客户）",
-		href: "<?=site_url('report/sales_customer')?>",
-		dataRight: "SAREPORTBU_QUERY",
-		target: "report-sales"
-	},
+//	salesSummary: {
+//		name: "销售汇总表（按商品）",
+//		href: "<?=site_url('report/sales_summary')?>",
+//		dataRight: "SAREPORTINV_QUERY",
+//		target: "report-sales"
+//	},
+//	salesSummaryCustomer: {
+//		name: "销售汇总表（按客户）",
+//		href: "<?=site_url('report/sales_customer')?>",
+//		dataRight: "SAREPORTBU_QUERY",
+//		target: "report-sales"
+//	},
 //	contactDebt: {
 //		name: "往来单位欠款表",
 //		href: "/report/contactDebt.do?action=detail",
@@ -832,12 +832,12 @@ var list = {
 		target: "setting-advancedSetting"
 	},
 	
-	backup: {
-		name: "备份与恢复",
-		href: "<?=site_url('backup')?>",
-		dataRight: "",
-		target: "setting-advancedSetting"
-	},
+//	backup: {
+//		name: "备份与恢复",
+//		href: "<?=site_url('backup')?>",
+//		dataRight: "",
+//		target: "setting-advancedSetting"
+//	},
 	reInitial: {
 		name: "重新初始化",
 		href: "",

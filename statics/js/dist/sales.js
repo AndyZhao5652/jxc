@@ -129,11 +129,12 @@ var curRow, curCol, loading, SYSTEM = system = parent.SYSTEM,
 					}
 				})
 			}
+                        var common_add = "<?php echo showlang('common', 'common_add');?>";
 			var i = '<!--<a id="original" class="ui-btn ui-btn-sc">选择源单</a>--><a id="savaAndAdd" class="ui-btn ui-btn-sp">保存并新增</a><a id="save" class="ui-btn">保存</a>',
-				//a = '<!--<a id="original" class="ui-btn ui-btn-sc">选择源单</a>--><a id="add" class="ui-btn ui-btn-sp">新增</a><a id="edit" class="ui-btn">保存</a><a href="/scm/invSa.do?action=toPdf&id=' + t.id + '" target="_blank" id="print" class="ui-btn">打印</a>',
-				//r = '<a id="add" class="ui-btn ui-btn-sp">新增</a><a href="/scm/invSa.do?action=toPdf&id=' + t.id + '" target="_blank" id="print" class="ui-btn">打印</a>',
-				a = '<!--<a id="original" class="ui-btn ui-btn-sc">选择源单</a>--><a id="add" class="ui-btn ui-btn-sp">新增</a><a id="edit" class="ui-btn">保存</a><a href="#" rel="'+ t.id +'" target="_blank" id="print" class="ui-btn">打印</a>',
-				r = '<a id="add" class="ui-btn ui-btn-sp">新增</a><a href="#" rel="'+ t.id +'" target="_blank" id="print" class="ui-btn">打印</a>',
+				//a = '<!--<a id="original" class="ui-btn ui-btn-sc">选择源单</a>--><a id="add" class="ui-btn ui-btn-sp">' + common_add + '</a><a id="edit" class="ui-btn">保存</a><a href="/scm/invSa.do?action=toPdf&id=' + t.id + '" target="_blank" id="print" class="ui-btn">打印</a>',
+				//r = '<a id="add" class="ui-btn ui-btn-sp">' + common_add + '</a><a href="/scm/invSa.do?action=toPdf&id=' + t.id + '" target="_blank" id="print" class="ui-btn">打印</a>',
+				a = '<!--<a id="original" class="ui-btn ui-btn-sc">选择源单</a>--><a id="add" class="ui-btn ui-btn-sp">' + common_add + '</a><a id="edit" class="ui-btn">保存</a><a href="#" rel="'+ t.id +'" target="_blank" id="print" class="ui-btn">打印</a>',
+				r = '<a id="add" class="ui-btn ui-btn-sp">' + common_add + '</a><a href="#" rel="'+ t.id +'" target="_blank" id="print" class="ui-btn">打印</a>',
 				n = "",
 				o = "";
 			if (billRequiredCheck) {

@@ -77,14 +77,14 @@ body{background: #fff;}
     			</li>
     			<li class="row-item">
     				<div class="label-wrap"><label for="esarrdate">预计抵达日期</label></div>
-    				<div class="ctn-wrap"><input type="text" value="" class="ui-input ui-datepicker-input" id="date" /></div>
+    				<div class="ctn-wrap"><input type="text" value="" class="ui-input ui-datepicker-input" id="esarrdate" /></div>
     			</li>
                         <li class="row-item odd">
-    				<div class="label-wrap"><label for="date">实际抵达日期</label></div>
+    				<div class="label-wrap"><label for="rearrdate">实际抵达日期</label></div>
     				<div class="ctn-wrap"><input type="text" value="" class="ui-input ui-datepicker-input" name="rearrdate" id="rearrdate" /></div>
     			</li>
                         <li class="row-item">
-    				<div class="label-wrap"><label for="date">发货日期</label></div>
+    				<div class="label-wrap"><label for="shipdate">发货日期</label></div>
     				<div class="ctn-wrap"><input type="text" value="" class="ui-input ui-datepicker-input" name="shipdate" id="shipdate" /></div>
     			</li>
     		</ul>
@@ -107,6 +107,6 @@ body{background: #fff;}
     </div>
 </div>
 
-<script src="<?=skin_url()?>/js/dist/transManage.js?1"></script>
+<script src="<?=skin_url()?>/js/dist/transManage.js?3"></script>
 </body>
 </html>

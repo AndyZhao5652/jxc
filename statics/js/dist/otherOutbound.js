@@ -4,6 +4,7 @@ var curRow, curCol, loading, urlParam = Public.urlParam(),
 	qtyPlaces = Number(parent.SYSTEM.qtyPlaces),
 	pricePlaces = Number(parent.SYSTEM.pricePlaces),
 	amountPlaces = Number(parent.SYSTEM.amountPlaces),
+        common_add = "<?php echo showlang('common', 'common_add');?>",
 	THISPAGE = {
 		init: function(e) {
 			SYSTEM.isAdmin !== !1 || SYSTEM.rights.AMOUNT_INAMOUNT || (hiddenAmount = !0);
@@ -72,7 +73,7 @@ var curRow, curCol, loading, urlParam = Public.urlParam(),
 					qty: e.totalQty,
 					amount: e.totalAmount
 				});
-				this.$_toolBottom.html("edit" === e.status ? '<a id="add" class="ui-btn ui-btn-sp mrb">新增</a><a id="edit" class="ui-btn mrb">保存</a><a  href="#" rel="'+ e.id +'" id="print" class="ui-btn">打印</a>' : '<a id="add" class="ui-btn ui-btn-sp mrb">新增</a><a  href="#" rel="'+ e.id +'" id="print" class="ui-btn">打印</a><a class="ui-btn-prev mrb" id="prev" title="上一张"><b></b></a><a class="ui-btn-next" id="next" title="下一张"><b></b></a>');
+				this.$_toolBottom.html("edit" === e.status ? '<a id="add" class="ui-btn ui-btn-sp mrb">' + common_add + '</a><a id="edit" class="ui-btn mrb">保存</a><a  href="#" rel="'+ e.id +'" id="print" class="ui-btn">打印</a>' : '<a id="add" class="ui-btn ui-btn-sp mrb">' + common_add + '</a><a  href="#" rel="'+ e.id +'" id="print" class="ui-btn">打印</a><a class="ui-btn-prev mrb" id="prev" title="上一张"><b></b></a><a class="ui-btn-next" id="next" title="下一张"><b></b></a>');
 				this.salesListIds = parent.salesListIds || [];
 				this.idPostion = $.inArray(String(e.id), this.salesListIds);
 				this.idLength = this.salesListIds.length;
@@ -445,7 +446,7 @@ var curRow, curCol, loading, urlParam = Public.urlParam(),
 					}, function(t) {
 						if (200 === t.status) {
 							originalData.id = t.data.id;
-							e.$_toolBottom.html('<a id="add" class="ui-btn ui-btn-sp mrb">新增</a><a id="edit" class="ui-btn mrb">保存</a> <a  href="#" rel="'+ originalData.id +'" id="print" class="ui-btn">打印</a>');
+							e.$_toolBottom.html('<a id="add" class="ui-btn ui-btn-sp mrb">' + common_add + '</a><a id="edit" class="ui-btn mrb">保存</a> <a  href="#" rel="'+ originalData.id +'" id="print" class="ui-btn">打印</a>');
 							parent.Public.tips({
 								content: "保存成功！"
 							})

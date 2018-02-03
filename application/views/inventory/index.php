@@ -27,7 +27,7 @@ include dirname(dirname(__FILE__))."\common\head.html";;
         <li id="showZero">
           <label class="chk" style="margin-top:6px; " title="显示零库存"><input type="checkbox" name="box">零库存</label>
         </li>
-        <li><a class="ui-btn ui-btn-sp mrb" id="search">查询</a></li>
+        <li><a class="ui-btn ui-btn-sp mrb" id="search"><?php echo showlang('common', 'common_query');?></a></li>
       </ul>
     </div>
     <div class="fr dn">

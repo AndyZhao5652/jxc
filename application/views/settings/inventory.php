@@ -20,7 +20,7 @@ include dirname(dirname(__FILE__))."\common\head.html";;
         <li>
           <input type="text" id="matchCon" class="ui-input">
         </li>
-        <li><a class="ui-btn mrb" id="search">查询</a><a class="ui-btn" id="refresh">刷新</a></li>
+        <li><a class="ui-btn mrb" id="search"><?php echo showlang('common', 'common_query');?></a><a class="ui-btn" id="refresh">刷新</a></li>
       </ul>
     </div>
   </div>

@@ -32,7 +32,7 @@ class Category extends CI_Controller {
 		}
 		if ($sql) {
 		    $cate = $this->data_model->category_type();
-		    $this->data_model->logs('新增'.$cate[$data['type']].':'.$data['name']);
+		    $this->data_model->logs(showlang('common', 'common_add').$cate[$data['type']].':'.$data['name']);
 			$this->cache_model->delsome(CATEGORY);
 			die('{"status":200,"msg":"success","data":{"id":'.$sql.',"name":"'.$data['name'].'","parentId":'.$data['pid'].'}}');
 		} else {
@@ -143,7 +143,7 @@ class Category extends CI_Controller {
 			$sql = $this->mysql_model->db_del(CATEGORY,'(id='.$id.')');   
 			if ($sql) {
 			    $cate = $this->data_model->category_type();
-		        $this->data_model->logs('删除'.$cate[$data['type']].':ID='.$id.' 名称：'.$data['name']);
+		        $this->data_model->logs(showlang('common', 'common_query').$cate[$data['type']].':ID='.$id.' 名称：'.$data['name']);
 				$this->cache_model->delsome(CATEGORY);	
 				die('{"status":200,"msg":"success"}');
 			} else {
